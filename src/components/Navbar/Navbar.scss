@@ -1,0 +1,39 @@
+@import "variables" ;
+@mixin navControl($theme) {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 1.7rem;
+    left: 0;
+    width: $hundred;
+    color: $black;
+    padding-left: 1rem;
+    @if $theme == 1 {
+        background-color: lightgreen;
+}   @else {
+    background-color: aqua;
+}
+}
+@mixin fullView {
+    width: $hundred;
+    height: $hundred;
+}
+.move {
+    @include navControl(1);
+}   
+.move2 {
+    position: fixed;
+    top: 14rem;
+    @include fullView;
+}
+.moveBtn {
+    position: absolute;
+    top: 1rem;
+    @include fullView;
+}
+@media screen and (min-width: 769px) {
+    .move2{
+        position: none;
+        top: 2rem;
+    }
+}
